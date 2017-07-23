@@ -1,3 +1,18 @@
 <md-toolbar color="primary">
   <img src="/assets/images/connect4.png" alt="Missing photo">
+  
+  <span fxFlex></span>
+  <button *ngIf="(authService.isSignedInStream | async)" md-icon-button [mdMenuTriggerFor]="signOutMenu">
+    <md-icon>more_vert</md-icon>
+  </button>
+  <md-menu [overlapTrigger]="false" #signOutMenu="mdMenu">
+    <span id="uname" md-menu-item disabled>Signed in as {{authService.displayNameStream | async}}</span>
+    <button (click)="authService.signOut()" md-menu-item>Sign Out</button>
+  </md-menu>
 </md-toolbar>
+
+<div fxLayoutAlign="center center">
+  <div class="container" class.gt-xs="container-extra-padding" fxFlex fxFlex.md="960px" fxFlex.gt-md="1100px">
+    <router-outlet></router-outlet>
+  </div>
+</div>

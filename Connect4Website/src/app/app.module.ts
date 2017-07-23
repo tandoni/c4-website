@@ -12,6 +12,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './+main/main.component';
 import { SigninComponent } from './+signin/signin.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
   MdAutocompleteModule,
@@ -38,6 +39,7 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
+import { AuthService } from "./services/auth.service";
 
 export const MaterialModules = [
   MdAutocompleteModule,
@@ -79,8 +81,9 @@ export const MaterialModules = [
     AngularFireAuthModule,
     BrowserAnimationsModule,
     MaterialModules,
+    FlexLayoutModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

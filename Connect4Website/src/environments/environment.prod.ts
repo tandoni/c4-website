@@ -8,4 +8,5 @@ export const environment = {
     storageBucket: "connect4-website.appspot.com",
     messagingSenderId: "556271102741"
   },
+  rosefireRegistryToken: "c7851d22-a0d8-4fb9-914c-b951e1600df4",
 };
