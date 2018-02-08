@@ -1,0 +1,13 @@
+<md-card fxLayout="column" *ngIf="post">
+  <md-card-title fxLayoutAlign="center center">
+    {{ post.photo.caption }}
+  </md-card-title>
+  <img md-card-image [src]="post.photo.url" alt="Image from firebase"><br>
+  <div fxLayout fxLayoutAlign="space-between stretch">
+    <button id="back" md-button (click)="goBack()">< BACK</button>
+    <span fxFlex></span>
+     <md-card-actions *ngIf="displayEditOptions()">
+      <button (click)="delete()" md-icon-button><md-icon>delete</md-icon></button>
+    </md-card-actions> 
+  </div>
+</md-card>

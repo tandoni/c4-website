@@ -1,25 +1,58 @@
-<div fxLayoutAlign="center center">
-  <md-card fxLayout="column" fxLayoutAlign="none center">
-    <md-card-title>
-      <span fxShow="false" fxShow.gt-xs>
+<!-- <div fxLayoutAlign="center center"> -->
+<!-- <md-card *ngIf="!(authService.isSignedInStream | async);else signedInTemplate" fxLayout="column" fxLayoutAlign="none center"> -->
+<!-- <md-card-title>
+    <span fxShow="false" fxShow.gt-xs>
         Yo, sign in to Connect4      
       </span>
-      <span fxShow="false" fxShow.xs>
+    <span fxShow="false" fxShow.xs>
         Yo, sign in      
       </span>
-    </md-card-title>
-    <button md-button id="google-button" (click)="authService.signInWithGoogle()"></button>
-    <button id="rose-button" (click)="authService.signInWithRoseFire()" md-raised-button>Rose-Hulman Login</button>
-  </md-card>
+  </md-card-title>
+  <button id="rose-button" (click)="signInWithRoseFire()" md-raised-button>Rose-Hulman Login</button>
+  <button id="github-button" (click)="signInWithGithub()" md-raised-button>
+      <img id="githubLogo" src="../assets/images/GitHub-Mark-Light-32px.png" alt="github">
+      <span>Sign in with GitHub</span>
+    </button> -->
+<!-- </md-card> -->
 
-  <!-- <ng-template #signedInTemplate>
+<!-- <ng-template #signedInTemplate>
     <md-card fxLayout="column" fxLayoutAlign="none center">
       <md-card-title>
-        <span fxShow="false" fxShow.gt-xs>
-        Signed in as {{authService.displayNameStream | async}}.
+        <span>
+        Signed in <span fxShow="false" fxShow.gt-xs>as {{authService.displayNameStream | async}}</span>
       </span>
       </md-card-title>
       <button md-raised-button (click)="authService.signOut()"> Sign Out</button>
     </md-card>
   </ng-template> -->
+<!-- </div> -->
+
+<div class="diiv" fxLayoutAlign="center center">
+  <md-card *ngIf="!(authService.isSignedInStream | async);else signedInTemplate" fxLayout="column" fxLayoutAlign="none center">
+    <md-card-title>
+      <span fxShow="false" fxShow.gt-xs>
+        You must be signed in to use this app
+      </span>
+      <span fxShow="false" fxShow.xs>
+        You must be signed in
+      </span>
+    </md-card-title>
+    <button id="rose-button" (click)="signInWithRoseFire()" md-raised-button>Rose-Hulman Login</button>
+    <button id="github-button" (click)="signInWithGithub()" md-raised-button>
+      <img id="githubLogo" src="../assets/images/GitHub-Mark-Light-32px.png" alt="github">
+      <span>Sign in with GitHub</span>
+    </button>
+    <button id="rose-button" (click)="showLoginDialog()" md-raised-button>Sign in with Email and Password </button>    
+  </md-card>
+
+  <ng-template #signedInTemplate>
+    <md-card fxLayout="column" fxLayoutAlign="none center">
+      <md-card-title>
+        <span fxShow="true" fxShow.gt-xs>
+        Signed in as {{authService.displayNameStream | async}}.
+      </span>
+      </md-card-title>
+      <button md-raised-button (click)="authService.signOut()"> Sign Out</button>
+    </md-card>
+  </ng-template>
 </div>

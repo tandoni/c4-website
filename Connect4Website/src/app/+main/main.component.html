@@ -1,7 +1,32 @@
- <!-- <md-grid-list [cols]="numColumns" gutterSize="10px" rowHeight="200px">
-  <md-grid-tile *ngFor="let password of passwordStream | async">
-    <app-password-display-card fxFlex [firebasePath]="firebasePath" [password]="password"></app-password-display-card>
-  </md-grid-tile>
-</md-grid-list>
+<div>
+  <form #addPost="ngForm">
+    <md-card fxLayout="column" fxLayoutAlign="none stretch">
+      <md-input-container fxFlex dividerColor="warn">
+        <input mdInput type="text" placeholder="Add a post" [(ngModel)]="post" name="post">
+      </md-input-container>
+      <div fxLayout="row" fxLayoutAlign="end center">
+        <button (click)="onSubmit()" type="submit" [disabled]="!post" md-raised-button color="primary">
+          Post
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button (click)="showPhotoDialog()" md-raised-button color="primary">Upload a Photo</button>
+      </div>
 
-<a (click)="showPasswordDialog()" md-fab><md-icon>add</md-icon></a>  -->
+    </md-card>
+  </form>
+
+  <br>
+  <div>
+    <div fxLayout="column" fxLayoutAlign="none stretch">
+      <md-card class="posts" *ngFor="let post of postService.allStream | async | reverse">
+        <app-post [post]=post>
+        </app-post>
+      </md-card>
+      <div *ngIf="!postService.hideLoadMoreBtn" fxLayout="row" fxLayoutAlign="end center">
+        <button md-raised-button color="accent" (click)="postService.displayMorePosts()">
+          Load more posts</button>
+      </div>
+    </div>
+
+  </div>
+</div>

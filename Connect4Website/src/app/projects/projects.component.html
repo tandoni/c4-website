@@ -1,0 +1,22 @@
+<div class="projects" fxLayout="column" fxLayoutAlign="start stretch">
+  <h1 md-dialog-title fxLayoutAlign="center center">{{title}}</h1>
+
+  <form #educationForm="ngForm" (ngSubmit)="onSubmit()" fxLayout="column">
+    <md-dialog-content fxLayout="column">
+      <md-input-container>
+        <input mdInput name="projectsOne" [(ngModel)]="projects.One" placeholder="Project #1">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput name="projectsTwo" [(ngModel)]="projects.Two" placeholder="Project #2">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput name="projectsThree" [(ngModel)]="projects.Three" placeholder="Project #3">
+      </md-input-container>
+    </md-dialog-content>
+
+    <md-dialog-actions fxLayoutAlign="end center">
+      <button md-button type="button" md-dialog-close>Cancel</button>
+      <button md-button type="submit">Save</button>
+    </md-dialog-actions>
+  </form>
+</div>

@@ -1,18 +1,47 @@
-<md-toolbar color="primary">
-  <img src="/assets/images/connect4.png" alt="Missing photo">
-  
-  <span fxFlex></span>
-  <button *ngIf="(authService.isSignedInStream | async)" md-icon-button [mdMenuTriggerFor]="signOutMenu">
-    <md-icon>more_vert</md-icon>
-  </button>
-  <md-menu [overlapTrigger]="false" #signOutMenu="mdMenu">
-    <span id="uname" md-menu-item disabled>Signed in as {{authService.displayNameStream | async}}</span>
-    <button (click)="authService.signOut()" md-menu-item>Sign Out</button>
-  </md-menu>
-</md-toolbar>
+<md-sidenav-container>
+  <!-- <md-sidenav #sidenav>
+    <md-toolbar color="primary">
+      Options
+    </md-toolbar>
+    <md-nav-list>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['/']">
+          Feed
+        </a>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['createProfile']">
+          Create/Edit Profile
+      </a>
 
-<div fxLayoutAlign="center center">
-  <div class="container" class.gt-xs="container-extra-padding" fxFlex fxFlex.md="960px" fxFlex.gt-md="1100px">
-    <router-outlet></router-outlet>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['contact']">
+        Contact
+      </a>
+
+      <hr>
+
+      <a md-list-item (click)="sidenav.toggle(); authService.signOut();">
+        Sign out
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="menuBtn" *ngIf="authService.isSignedInStream | async" md-icon-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+
+    <img (click)="redirect()" class.xs="mainImageCenter" src="/assets/images/connect4.png" alt="Missing photo">
+
+    <span fxFlex fxShow="false" fxShow.gt-xs></span>
+    <span fxShow="false" *ngIf="authService.isSignedInStream | async" fxShow.gt-xs class="signedInBtn">{{authService.displayNameStream | async}}, you are AWESOME!</span>
+  </md-toolbar> -->
+
+  <div id="temp" fxLayoutAlign="space-around center">
+    <!-- <div class="containe">
+      {{authService.displayNameStream | async}}
+    </div> -->
+    <!-- <div class="container" class.gt-xs="container-extra-padding" fxFlex fxFlex.md="600px" fxFlex.gt-md="600px"> -->
+    <div class="container" class.gt-xs="container-extra-padding" fxFlex="60">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</div>
+
+</md-sidenav-container>

@@ -1,0 +1,63 @@
+h1 {
+  font-family: Roboto, "Helvetica Neue", "sans-serif";
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #4d3e93;
+  padding: 0 10px;
+}
+
+// #google-button {
+//   background-color: transparent;
+//   background-image: url('/assets/images/google_signin_dark.png');
+//   width: 191px;
+//   height: 46px;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   &:active {
+//     background-image: url('/assets/images/google_signin_dark_pressed.png');
+//   }
+// }
+#rose-button {
+  background-color: #4d3e93;
+  color: #ddd;
+  font-size: 18px;
+  // margin: 20px;
+  // padding: 5px 20px;
+}
+
+.dialogStuff {
+  margin-right: 30px;
+  margin-bottom: -24px;
+}
+
+#github-button {
+  background-color: #444444;
+  font-size: 18px;
+  margin: 20px;
+  padding: 5px 20px;
+  color: white;
+  &:hover {
+    color: #fff;
+    background-color: #2b2b2b;
+    border-color: rgba(0, 0, 0, 0.2)
+  }
+}
+
+md-input-container {
+  width: 100%;
+}
+
+#githubLogo {
+  // border-right: 2px solid  #2b2b2b;
+  margin-left: -10px;
+  margin-right: 10px;
+}
+
+.rightAlignBtn {
+  margin-bottom: 30px;
+}
+
+.errMessage {
+  color: red;
+}

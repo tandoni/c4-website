@@ -1,0 +1,59 @@
+<!-- <div fxLayout="column">
+  <h1 md-dialog-title>
+    <span fxShow="false" fxShow.gt-xs>
+        Yo, sign in to Connect4      
+      </span>
+    <span fxShow="false" fxShow.xs>
+        Yo, sign in      
+      </span>
+  </h1>
+
+  <md-dialog-content fxFlex="100" fxLayoutAlign="none center">
+    <md-dialog-actions fxLayout="column" fxLayoutAlign="end center">
+      <button id="rose-button" (click)="signInWithRoseFire()" md-raised-button>Rose-Hulman Login</button>
+      <button id="github-button" (click)="signInWithGithub()" md-raised-button>
+        <img id="githubLogo" src="../assets/images/GitHub-Mark-Light-32px.png" alt="github">
+        <span>Sign in with GitHub</span>
+      </button>
+    </md-dialog-actions>
+  </md-dialog-content>
+</div> -->
+
+
+<div fxLayout="column" fxLayoutAlign="none center">
+  <h1 md-dialog-title>
+    <span>
+      Email and Password      
+    </span>
+
+  </h1>
+
+  <md-dialog-content fxLayoutAlign="none end">
+    <md-dialog-actions fxFlex fxLayout="column" class="dialogStuff" fxLayoutAlign="none end">
+      <md-input-container>
+        <input mdInput type="email" placeholder="Enter email..." [(ngModel)]="email" name="email">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput type="password" placeholder="Enter password..." [(ngModel)]="password" name="password">
+      </md-input-container>
+      <button class="rightAlignBtn" (click)="signInWithEmail(error)" md-raised-button color="primary">Sign In</button>
+    </md-dialog-actions>
+
+    <!-- <div fxLayout="column" fxLayoutAlign="none center"> -->
+    <md-dialog-actions fxFlex fxLayout="column" fxLayoutAlign="none end">
+      <md-input-container>
+        <input mdInput type="email" placeholder="Enter email..." [(ngModel)]="newEmail" name="newEmail">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput type="password" placeholder="Enter password..." [(ngModel)]="newPassword" name="newPassword">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput type="password" placeholder="Confirm password..." [(ngModel)]="confirmPassword" name="confirmPassword">
+      </md-input-container>
+      <button class="rightAlignBtn" (click)="createWithEmail(error)" md-raised-button color="primary">Create</button>
+    </md-dialog-actions>
+    <!-- </div> -->
+
+  </md-dialog-content>
+  <div class="errMessage" #error hidden></div>  
+</div>

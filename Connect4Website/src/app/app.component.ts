@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from "./services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,10 @@ import { AuthService } from "./services/auth.service";
 })
 export class AppComponent {
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService, private router: Router) {
+  }
+
+  redirect() {
+    this.router.navigate(['/']);
   }
 }

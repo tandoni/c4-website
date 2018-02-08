@@ -1,0 +1,22 @@
+<div class="awards" fxLayout="column" fxLayoutAlign="start stretch">
+  <h1 md-dialog-title fxLayoutAlign="center center">{{title}}</h1>
+
+  <form #awardsForm="ngForm" (ngSubmit)="onSubmit()" fxLayout="column">
+    <md-dialog-content fxLayout="column">
+      <md-input-container>
+        <input mdInput name="awardsOne" [(ngModel)]="awards.One" placeholder="Awards #1">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput name="awardsTwo" [(ngModel)]="awards.Two" placeholder="Awards #2">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput name="awardsThree" [(ngModel)]="awards.Three" placeholder="Awards #3">
+      </md-input-container>
+    </md-dialog-content>
+
+    <md-dialog-actions fxLayoutAlign="end center">
+      <button md-button type="button" md-dialog-close>Cancel</button>
+      <button md-button type="submit">Save</button>
+    </md-dialog-actions>
+  </form>
+</div>

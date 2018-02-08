@@ -1,0 +1,80 @@
+<md-grid-list [cols]="numColumns" gutterSize="10px" [rowHeight]="heightDec">
+
+  <md-grid-tile>
+    <!-- <md-card>
+      <md-card-title (click)="showBioCard()" fxLayoutAlign="none center">
+        Bio
+        <span fxFlex></span>
+        <button md-icon-button>
+          <md-icon>create</md-icon>
+        </button>
+      </md-card-title>
+    </md-card> -->
+    <div (click)="showBioCard()" class="triangle"><span class="inn">Bio</span></div>
+  </md-grid-tile>
+
+  <md-grid-tile>
+    <!-- <md-card>
+      <md-card-title (click)="showSkillsCard()" fxLayoutAlign="none center">
+        Skills
+        <span fxFlex></span>
+        <button md-icon-button>
+          <md-icon>code</md-icon>
+        </button>
+      </md-card-title>
+    </md-card> -->
+    <div (click)="showSkillsCard()" class="triangle"><span class="inn">Skills</span></div>
+  </md-grid-tile>
+
+  <md-grid-tile>
+    <!-- <md-card>
+      <md-card-title (click)="showEducationCard()" fxLayoutAlign="none center">
+        Education
+        <span fxFlex></span>
+        <button md-icon-button>
+          <md-icon>local_library</md-icon>
+        </button>
+      </md-card-title>
+    </md-card> -->
+    <div (click)="showEducationCard()" class="triangle"><span class="inn">Education</span></div>
+  </md-grid-tile>
+
+  <md-grid-tile>
+    <!-- <md-card>
+      <md-card-title (click)="showExperienceCard()" fxLayoutAlign="none center">
+        Experience
+        <span fxFlex></span>
+        <button md-icon-button>
+          <md-icon>work</md-icon>
+        </button>
+      </md-card-title>
+    </md-card> -->
+    <div (click)="showExperienceCard()" class="triangle"><span class="inn">Experience</span></div>
+  </md-grid-tile>
+
+  <md-grid-tile>
+    <!-- <md-card>
+      <md-card-title (click)="showAwardsCard()" fxLayoutAlign="none center">
+        Awards/Certificates
+        <span fxFlex></span>
+        <button md-icon-button>
+            <md-icon>code</md-icon>
+          </button>
+      </md-card-title>
+    </md-card> -->
+    <div (click)="showAwardsCard()" class="triangle"><span class="inn">Awards</span></div>
+  </md-grid-tile>
+
+  <md-grid-tile>
+    <!-- <md-card>
+      <md-card-title (click)="showProjectsCard()" fxLayoutAlign="none center">
+        Projects
+        <span fxFlex></span>
+        <button md-icon-button>
+              <md-icon>code</md-icon>
+            </button>
+      </md-card-title>
+    </md-card> -->
+    <div (click)="showProjectsCard()" class="triangle"><span class="inn">Projects</span></div>
+  </md-grid-tile>
+</md-grid-list>

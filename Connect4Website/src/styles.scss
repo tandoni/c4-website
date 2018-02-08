@@ -1,12 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    margin: 0;
-    background-color: #ddd; 
+  margin: 0;
+  background-color: white;
 }
 
-html, body, material-app {
+html,
+body,
+material-app {
   margin: 0;
   width: 100%;
   height: 100%;
+}
+
+body:after {
+  content: ""; // background: url('http://connect4.io/wp-content/uploads/2016/03/Contact-pix.jpg');
+  opacity: 0.8;
+  background-size: cover;
+  background-repeat: no-repeat; // background-position: 50% 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
